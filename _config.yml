@@ -20,6 +20,7 @@ highlighter: pygments
 assets: http://fylder.github.io/assets
 #assets: http://127.0.0.1:4000/assets
 baseurl: http://fylder.github.io
+#baseurl:
 
 
 # pagination
@@ -85,7 +86,7 @@ mathjax: false      #enable mathjax if true
 #### Author information
 author:
   name: fylder      ## e.g. wuchong Author name
-  intro_line1:  "Hei, 我乃南蛮fylder in 十万大山."    ## your introduction on the bottom of the page
+  intro_line1:  "Hei, I'm fylder in 十万大山."    ## your introduction on the bottom of the page
   intro_line2:  "This is my blog, believe it or not. Too simple, too Smile."  ## the 2nd line
   weibo: 2539792702     ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
   weibo_verifier: 0e41f547 ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.

@@ -2225,7 +2225,7 @@ footer {
 
 .social-font {
     width: 100%;
-    margin: 0px auto;
+    margin: 14px auto;
     float: left;
     padding-left: 3%;
 }
@@ -2642,4 +2642,10 @@ pre .keyword, pre .javascript .function {
 article .article-content img.emoji {
     padding: 0px;
     margin: 0em 0.2em 0.25em 0.2em;
+}
+
+.icon-img{
+    max-width: 36%;
+    width: 180px;
+    height: auto;
 }
