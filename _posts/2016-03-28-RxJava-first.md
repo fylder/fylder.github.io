@@ -76,32 +76,7 @@ observable.subscribe(subscriber);
 
 
 Subscriber在反馈的处理流程
-```flow
-st=>start: Start
-call1=>operation: onCompleted()
-call2=>operation: onError()
-call3=>operation: onNext()
-op=>operation: well done
-cond=>condition: before
-has not something?
-cond2=>condition: after
-has not something?
-cond3=>condition: is wrong?
-
-e=>end
-
-st->cond->call3->cond2
-call1->e
-call2->e
-op->e
-cond(yes)->call3
-cond(no)->cond3
-cond2(yes)->op
-cond2(no)->cond3
-cond3(yes)->call2
-cond3(no)->call1
-```
-
+![subscriber-flow](http://fylder.github.io/img/pic/rxjava-subscriber.png)
 
 RxJava当然也没那么简单就完了，一个Observable还有很多的操作符自由搭配，这里就不多说。
 
