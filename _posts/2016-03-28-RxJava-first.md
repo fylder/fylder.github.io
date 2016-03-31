@@ -13,7 +13,7 @@ excerpt: 一个类似于观察者模式的良好体现，扔掉AsyncTask，淡�
 
 [RxJava](http://reactivex.io)从去年开始，就开始流行起来，那时还不太在意，而看到那些技术周刊总是提及后，也去了解一番，在经常使用CallBack很容易就了解RxJava是怎么回事，说太多的原理也是抽象，简单粗暴的弄出结果了再说。
 
-#####一: 定义想干什么
+**一: 定义想干什么**
 ```java
 Observable<String> observable = Observable.create(new Observable.OnSubscribe<String>() {
     @Override
@@ -22,7 +22,7 @@ Observable<String> observable = Observable.create(new Observable.OnSubscribe<Str
     
     }).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread());
 ```
-#####二: 定义怎么处理
+**二: 定义怎么处理**
 ```java
 Subscriber<String> subscriber=new Subscriber<String>() {
      @Override
@@ -39,7 +39,7 @@ Subscriber<String> subscriber=new Subscriber<String>() {
      
      };
 ```
-#####三: 执行
+**三: 执行**
 ```java
 observable.subscribe(subscriber);
 ```
@@ -64,14 +64,15 @@ observable.subscribe(subscriber);
 
 在Call()里执行以下方法
 * `onNext()`用于传参数,过程调用
-* `onCompleted()`和`onError()`都会中途打断跳出,从而结束整个操作,onNext能不能继续执行就看用不用这两个方法
+* `onCompleted()`和`onError()`都会中途打断跳出,从而结束整个操作,onNext能不能继续执行就看用不用这两个方法,当然在正常的情况下最后一定会调用onComleted()
 
+```java
+subscriber.onNext(s);   //传入参数
 
-		subscriber.onNext(s);   //传入参数
-
-		subscriber.onError(new Throwable("错了就是错了"));  //异常结束
+subscriber.onError(new Throwable("错了就是错了"));  //异常结束
     
-	    subscriber.onCompleted();   //正常结束  
+subscriber.onCompleted();   //正常结束
+```
     
 
 
