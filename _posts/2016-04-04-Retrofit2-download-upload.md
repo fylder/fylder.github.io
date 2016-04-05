@@ -170,7 +170,7 @@ public class DownloadInterceptor implements Interceptor {
 ```java
 OkHttpClient okHttpClient = new OkHttpClient()
         .newBuilder()
-        .addInterceptor(new UploadInterceptor(listener))
+        .addInterceptor(new DownloadInterceptor(listener))
         .build();
 ```
 
