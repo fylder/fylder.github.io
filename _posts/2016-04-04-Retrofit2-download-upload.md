@@ -13,13 +13,13 @@ excerpt: 用拦截器在上传下载的监听
 近段时间一直在看Retrofit2和RxJava，收集了不少相关资料，文件的上传下载有时候我们需要知道一个进度，用于给用户提供一个友好的交互提示，要实现这个功能，需要在过程中额外的加入统计，正好okhttp提供一个Interceptor拦截器。
 
 
-###下载
+### 下载
 
 首先定义一个api，加上 `@Streaming` 是为了防止在大文件的情况的下可能会导致OOM，没有注入，在Monitors的Memory里看到内存一直增长，也就是说过程中一直持续保存在内存，直到下载完成后才会向内存读取写入，而加入后就会边接收边写入，完成合理的IO，内存就不会波动很大。
 
 返回值就需要的一个ResponseBody，文件的写入就需要这个来获取。
 
-#####定义一个api
+##### 定义一个api
 ```java
 /**
  * beware with large files
@@ -29,7 +29,7 @@ excerpt: 用拦截器在上传下载的监听
  Observable<ResponseBody> download();
 ```
 
-#####如何保存文件
+##### 如何保存文件
 只需要在map操作符里处理就可以
 > .map(r -> writeResponseBodyToDisk(response, path, name))
 
@@ -84,7 +84,7 @@ private static boolean writeResponseBodyToDisk(ResponseBody response, String pat
 }
 ```
 
-#####下载拦截监听进度的接口
+##### 下载拦截监听进度的接口
 
 ```java
 public interface DownloadListener {
@@ -98,7 +98,7 @@ public interface DownloadListener {
     
 }
 ```
-#####下载拦截器
+##### 下载拦截器
 ```java
 public class DownloadInterceptor implements Interceptor {
 
@@ -165,7 +165,7 @@ public class DownloadInterceptor implements Interceptor {
     }
 }
 ```
-#####在获取一个Retrofit时在OkHttpClient加入拦截器就可以监听
+##### 在获取一个Retrofit时在OkHttpClient加入拦截器就可以监听
 ```java
 OkHttpClient okHttpClient = new OkHttpClient()
         .newBuilder()
@@ -173,19 +173,19 @@ OkHttpClient okHttpClient = new OkHttpClient()
         .build();
 ```
 
-###上传
+### 上传
 
 Http的上传head需要定义Content-Type: multipart/form-data;
 Retrofit2的在上传要注入`@Multipart`，参数就`@PartMap`或`@Part`
 
-#####定义api
+##### 定义api
 ```java
 @Multipart
 @POST("upload")
 Observable<String> upload(@PartMap Map<String, RequestBody> params);
 ```
 
-#####参数的规范
+##### 参数的规范
 >	// 使用 PartMap 
 > partMap.put("参数名\"; filename=\"文件名\"", file);
 
@@ -197,7 +197,7 @@ RequestBody body = RequestBody.create(MediaType.parse("image/*"), file);
 Map<String, RequestBody> partMap = new HashMap<>();
 partMap.put("thumb\"; filename=\"img.jpg\"", body);
 ```
-#####上传拦截监听进度的接口
+##### 上传拦截监听进度的接口
 ```java
 public interface UploadListener {
 
@@ -209,7 +209,7 @@ public interface UploadListener {
 
 }
 ```
-#####上传拦截器
+##### 上传拦截器
 ```java
 public class UploadInterceptor implements Interceptor {
 
@@ -235,7 +235,7 @@ public class UploadInterceptor implements Interceptor {
     }
 }
 ```
-#####继承RequestBody
+##### 继承RequestBody
 文件上传过程的进度中就从RequestBody获取
 ```java
 public class UploadRequestBody extends RequestBody {
@@ -289,7 +289,7 @@ public class UploadRequestBody extends RequestBody {
     }
 }
 ```
-#####拦截器的配置就如同下载的一样
+##### 拦截器的配置就如同下载的一样
 ```java
 OkHttpClient okHttpClient = new OkHttpClient()
         .newBuilder()
