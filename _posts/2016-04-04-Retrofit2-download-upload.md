@@ -9,7 +9,6 @@ time: 2016.4.4 20:47:24
 excerpt: 用拦截器在上传下载的监听
  
 ---
-
 近段时间一直在看Retrofit2和RxJava，收集了不少相关资料，文件的上传下载有时候我们需要知道一个进度，用于给用户提供一个友好的交互提示，要实现这个功能，需要在过程中额外的加入统计，正好okhttp提供一个 `Interceptor` 拦截器。
 
 
@@ -21,6 +20,7 @@ excerpt: 用拦截器在上传下载的监听
 
 
 **定义一个api**
+
 ```java
 /**
  * beware with large files
@@ -100,6 +100,7 @@ public interface DownloadListener {
 }
 ```
 **下载拦截器**
+
 ```java
 public class DownloadInterceptor implements Interceptor {
 
@@ -167,6 +168,7 @@ public class DownloadInterceptor implements Interceptor {
 }
 ```
 **在获取一个Retrofit时在OkHttpClient加入拦截器就可以监听**
+
 ```java
 OkHttpClient okHttpClient = new OkHttpClient()
         .newBuilder()
@@ -180,6 +182,7 @@ Http的上传head需要定义Content-Type: multipart/form-data;
 Retrofit2的在上传要注入`@Multipart`，参数就`@PartMap`或`@Part`
 
 **定义api**
+
 ```java
 @Multipart
 @POST("upload")
@@ -192,13 +195,16 @@ Observable<String> upload(@PartMap Map<String, RequestBody> params);
 
 ***filename要写，发现不写会上传失败***，至于文件名无所谓，服务器需要知道文件名那就另当别论
 
-这里有个规范说得比较清楚 [春上冰月](http://www.caoyue.com.cn/blog/2016/02/12/How-to-upload-file-with-retrofit2/)
+这里有个规范说得比较清楚 [春上冰月](http://www.caoyue.com.cn/blog/2016/02/12/How-to-upload-file-with-retrofit2/){:target="_blank"}
+
 ```java
 RequestBody body = RequestBody.create(MediaType.parse("image/*"), file);
 Map<String, RequestBody> partMap = new HashMap<>();
 partMap.put("thumb\"; filename=\"img.jpg\"", body);
 ```
+
 **上传拦截监听进度的接口**
+
 ```java
 public interface UploadListener {
 
@@ -211,6 +217,7 @@ public interface UploadListener {
 }
 ```
 **上传拦截器**
+
 ```java
 public class UploadInterceptor implements Interceptor {
 
@@ -238,6 +245,7 @@ public class UploadInterceptor implements Interceptor {
 ```
 **继承RequestBody**
 文件上传过程的进度中就从RequestBody获取
+
 ```java
 public class UploadRequestBody extends RequestBody {
 
@@ -291,6 +299,7 @@ public class UploadRequestBody extends RequestBody {
 }
 ```
 **拦截器的配置就如同下载的一样**
+
 ```java
 OkHttpClient okHttpClient = new OkHttpClient()
         .newBuilder()
@@ -299,5 +308,5 @@ OkHttpClient okHttpClient = new OkHttpClient()
 ```
 
 ------
-**ps:**继承RequestBody的来源一个大神[okhttp-utils](https://github.com/hongyangAndroid/okhttp-utils)，这个封装好的okhttp，也是用过还不错。
+**ps:**继承RequestBody的来源一个大神[okhttp-utils](https://github.com/hongyangAndroid/okhttp-utils){:target="_blank"}，这个封装好的okhttp，也是用过还不错。
 

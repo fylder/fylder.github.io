@@ -18,24 +18,24 @@ if (page.archive){
 %>
 -->
 
-{% if page.type == 'archives' %}
+{% if layout.type == 'archives' %}
 {% assign title = '归档' %}
 {% assign icon = 'archive' %}
 {% endif %}
 
-{% if page.type == 'categories' %}
+{% if layout.type == 'categories' %}
 {% assign title = '分类' %}
 {% assign icon = 'category' %}
 {% endif %}
 
-{% if page.type == 'tags' %}
+{% if layout.type == 'tags' %}
 {% assign title = '标签' %}
 {% assign icon = 'tag' %}
 {% endif %}
 
 <div class="archive-title" >
   <h2 class="{{ icon }}-icon"><span class='archive-folder'>{{ title }}</span></h2>
-  {% if page.type == 'archives' %}
+  {% if layout.type == 'archives' %}
   <div class="archiveslist archive-float clearfix">
     {% assign count = 1 %}
     {% for post in site.posts  %}
@@ -58,7 +58,7 @@ if (page.archive){
     </ul>
  </div>
   {% endif %}
-  {% if page.type == 'categories' %}
+  {% if layout.type == 'categories' %}
   
   <ul class="archive-list">
   <div class="archiveslist archive-float clearfix">
@@ -72,7 +72,7 @@ if (page.archive){
  </ul>
  {% endif %}
  
-  {% if page.type == 'tags' %}
+  {% if layout.type == 'tags' %}
   
   <ul class="archive-list">
   <div class="archiveslist archive-float clearfix">

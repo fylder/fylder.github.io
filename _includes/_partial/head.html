@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
     {% assign title = page.title %}
-    {% if page.type == 'archives' %}
+    {% if layout.type == 'archives' %}
     {% assign title = '归档' %}
     {% endif %}
-    {% if page.type == 'categories' %}
+    {% if layout.type == 'categories' %}
     {% assign title = '分类' %}
     {% endif %}
-    {% if page.type == 'tags' %}
+    {% if layout.type == 'tags' %}
     {% assign title = '标签' %}
     {% endif %}
     <title>{% if title %}{{ title }} | {% endif %}{{ site.title }}</title>
@@ -24,7 +24,7 @@
     <!--<%- open_graph({twitter_id: theme.author.twitter, google_plus: theme.author.google_plus}) %>-->
     
     <meta name="description" content="page.description">
-    {% if page.type == 'post' %}
+    {% if layout.type == 'post' %}
     <meta property="og:type" content="article">
     {% else %}
     <meta property="og:type" content="website">

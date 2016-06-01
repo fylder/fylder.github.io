@@ -15,7 +15,7 @@ github_username: fylder
 permalink: /:categories/:year/:month/:day/:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-highlighter: pygments
+#highlighter: pygments
 
 assets: http://fylder.github.io/assets
 #assets: http://127.0.0.1:4000/assets
@@ -27,16 +27,12 @@ baseurl: http://fylder.github.io
 paginate: 7
 
 # Markdown Processors
-markdown: redcarpet
-redcarpet:
-  extensions:
-    - hard_wrap
-    - no_intra_emphasis
-    - autolink
-    - strikethrough
-    - tables
-    - lax_spacing
-    - with_toc_data
+#markdown: kramdown
+kramdown:
+  input:         GFM
+  auto_ids:      true
+  auto_id_prefix: 'id-'
+  syntax_highlighter: rouge
 
 tagline: 最爱林月如
 

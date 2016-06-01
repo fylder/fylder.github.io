@@ -11,9 +11,10 @@ excerpt: 一个类似于观察者模式的良好体现，扔掉AsyncTask，淡�
 
 > 有些事情看上去抽象得不知所以然，经历过了才有恍然如是的感慨
 
-[RxJava](http://reactivex.io)从去年开始，就开始流行起来，那时还不太在意，而看到那些技术周刊总是提及后，也去了解一番，在经常使用CallBack很容易就了解RxJava是怎么回事，说太多的原理也是抽象，简单粗暴的弄出结果了再说。
+[RxJava](http://reactivex.io){:target="_blank"}从去年开始，就开始流行起来，那时还不太在意，而看到那些技术周刊总是提及后，也去了解一番，在经常使用CallBack很容易就了解RxJava是怎么回事，说太多的原理也是抽象，简单粗暴的弄出结果了再说。
 
 **一: 定义想干什么**
+
 ```java
 Observable<String> observable = Observable.create(new Observable.OnSubscribe<String>() {
     @Override
@@ -23,6 +24,7 @@ Observable<String> observable = Observable.create(new Observable.OnSubscribe<Str
     }).subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread());
 ```
 **二: 定义怎么处理**
+
 ```java
 Subscriber<String> subscriber=new Subscriber<String>() {
      @Override
@@ -40,6 +42,7 @@ Subscriber<String> subscriber=new Subscriber<String>() {
      };
 ```
 **三: 执行**
+
 ```java
 observable.subscribe(subscriber);
 ```
@@ -59,8 +62,8 @@ observable.subscribe(subscriber);
 
 让Subscriber在一个UI Thread上操作,也就是在返回值时的回调
 
-------
-具体的操作流程
+
+##### **具体的操作流程**
 
 在Call()里执行以下方法
 * `onNext()`用于传参数,过程调用
