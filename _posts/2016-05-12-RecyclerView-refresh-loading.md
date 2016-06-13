@@ -16,7 +16,9 @@ RecyclerView控件从前年开始发布，google发布此控件就是为了代�
 在使用的过程发现，官方有SwipeRefreshLayout支持RecyclerView的刷新，但在加载更多的情况没有接口调用，于是就想DIY一个自定义RecyclerView扩展支持上拉加载更多。
 
 ### DIY
+
 <p>
+
 #### FylderRecyclerView
 继承于ReclcyerView，扩展添加划至最后一项触发回调onLoading()事件
 
@@ -323,7 +325,9 @@ public abstract class BaseRecyclerAdapter<T> extends RecyclerView.Adapter {
 ```
 
 ### 如何使用 
+
 <p>
+
 #### DemoAdapter
 只需要写显示的布局绑定，最后一项布局已在继承的BaseRecyclerAdapter，不需要考虑。
 
