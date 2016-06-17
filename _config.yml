@@ -17,9 +17,9 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 #highlighter: pygments
 
-assets: http://fylder.github.io/assets
+assets: https://fylder.github.io/assets
 #assets: http://127.0.0.1:4000/assets
-baseurl: http://fylder.github.io
+baseurl: https://fylder.github.io
 #baseurl:
 
 
