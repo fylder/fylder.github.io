@@ -50,9 +50,9 @@ observable.subscribe(subscriber);
 
 ***说明***
 
-**ps:**在创建`Observable<T>`时，必须像建造者模式的方式，否则后续的配置不会生效(不确定)。
+**ps:**在创建Observable<T>时，必须像建造者模式的方式，否则后续的配置不会生效(不确定)。
 
-给Observable线程上的通常配置 `Schedulers`
+给Observable线程上的通常配置Schedulers
 
 > subscribeOn(Schedulers.newThread())
 
