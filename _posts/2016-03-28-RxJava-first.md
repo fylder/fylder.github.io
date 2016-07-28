@@ -66,6 +66,7 @@ observable.subscribe(subscriber);
 ##### **具体的操作流程**
 
 在Call()里执行以下方法
+
 * `onNext()`用于传参数,过程调用
 * `onCompleted()`和`onError()`都会中途打断跳出,从而结束整个操作,onNext能不能继续执行就看用不用这两个方法,当然在正常的情况下最后一定会调用onCompleted()
 
