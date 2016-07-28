@@ -61,6 +61,7 @@ observable.subscribe(subscriber);
 > observeOn(AndroidSchedulers.mainThread())
 
 让Subscriber在一个UI Thread上操作,也就是在返回值时的回调
+
 <br>
 
 * 多个subscribeOn()，只有第一个subscribeOn()有效，且对observeOn()之前的Observable影响
