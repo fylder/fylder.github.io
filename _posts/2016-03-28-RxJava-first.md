@@ -68,6 +68,7 @@ observable.subscribe(subscriber);
 * observeOn()能控制下面代码的线程，subscribeOn()只能在第一次设置的时候起作用
 
 <br>
+
 ##### **具体的操作流程**
 
 在Call()里执行以下方法
