@@ -50,7 +50,7 @@ observable.subscribe(subscriber);
 
 ***说明***
 
-**ps:**在创建`Observable<T>`时，必须像建造者模式的方式，否则后续的配置不会生效。
+**ps:**在创建`Observable<T>`时，必须像建造者模式的方式，否则后续的配置不会生效(不确定)。
 
 给Observable线程上的通常配置 `Schedulers`
 
@@ -61,6 +61,10 @@ observable.subscribe(subscriber);
 > observeOn(AndroidSchedulers.mainThread())
 
 让Subscriber在一个UI Thread上操作,也就是在返回值时的回调
+
+* 多个subscribeOn()，只有第一个subscribeOn()有效，且对observeOn()之前的Observable影响
+* observeOn()会对后续所有Observable有效，可以设置多个observeOn()
+* observeOn()能控制下面代码的线程，subscribeOn()只能在第一次设置的时候起作用
 
 
 ##### **具体的操作流程**
