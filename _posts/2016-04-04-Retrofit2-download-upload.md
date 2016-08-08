@@ -197,7 +197,7 @@ Observable<String> upload(@PartMap Map<String, RequestBody> params);
 
 **filename要写，发现不写会上传失败**，至于文件名无所谓，服务器需要知道文件名那就另当别论
 
-这里有个规范说得比较清楚 [春上冰月](http://www.caoyue.com.cn/blog/2016/02/12/How-to-upload-file-with-retrofit2/){:target="_blank"}
+这里有个规范说得比较清楚[春上冰月](http://www.caoyue.com.cn/blog/2016/02/12/How-to-upload-file-with-retrofit2/){:target="_blank"}
 
 ```java
 RequestBody body = RequestBody.create(MediaType.parse("image/*"), file);
@@ -309,6 +309,9 @@ OkHttpClient okHttpClient = new OkHttpClient()
         .build();
 ```
 
+<br>
+
 ------
+
 **ps:**继承RequestBody的来源一个大神[okhttp-utils](https://github.com/hongyangAndroid/okhttp-utils){:target="_blank"}，这个封装好的okhttp，也是用过还不错。
 
