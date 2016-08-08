@@ -190,6 +190,7 @@ Observable<String> upload(@PartMap Map<String, RequestBody> params);
 ```
 
 **参数的规范**
+
 >	// 使用 PartMap 
 > partMap.put("参数名\"; filename=\"文件名\"", file);
 
