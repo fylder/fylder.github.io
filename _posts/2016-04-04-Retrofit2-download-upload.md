@@ -192,13 +192,15 @@ Observable<String> upload(@PartMap Map<String, RequestBody> params);
 
 **参数的规范**
 
-使用 PartMap
+> 使用 PartMap
 
-> partMap.put("参数名\"; filename=\"文件名\"", file);
-> or
-> partMap.put("参数名\"; filename=\"" + filename + "\"", file);
+```java
+partMap.put("参数名\"; filename=\"文件名\"", file);
+// or 自定义文件名
+partMap.put("参数名\"; filename=\"" + filename + "\"", file);
+```
 
-**filename要写，发现不写会上传失败**，至于文件名无所谓，服务器需要知道文件名那就另当别论
+**filename要写，发现不写会上传失败**，至于文件名无所谓，但必须包括文件格式，服务器需要知道文件名那就另当别论
 
 这里有个规范说得比较清楚[春上冰月](http://www.caoyue.com.cn/blog/2016/02/12/How-to-upload-file-with-retrofit2/){:target="_blank"}
 
