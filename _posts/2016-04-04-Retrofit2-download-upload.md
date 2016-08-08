@@ -192,6 +192,7 @@ Observable<String> upload(@PartMap Map<String, RequestBody> params);
 **参数的规范**
 
 > 使用 PartMap
+>
 > partMap.put("参数名\"; filename=\"文件名\"", file);
 
 **filename要写，发现不写会上传失败**，至于文件名无所谓，服务器需要知道文件名那就另当别论
