@@ -86,7 +86,8 @@ private static boolean writeResponseBodyToDisk(ResponseBody response, String pat
 }
 ```
 
-##### 下载拦截监听进度的接口
+##### 下载监听接口
+下载拦截监听进度的接口
 
 ```java
 public interface DownloadListener {
@@ -214,7 +215,8 @@ Map<String, RequestBody> partMap = new HashMap<>();
 partMap.put("thumb\"; filename=\"img.jpg\"", body);
 ```
 
-##### 上传拦截监听进度的接口
+##### 上传监听接口
+上传拦截监听进度的接口
 
 ```java
 public interface UploadListener {
@@ -312,7 +314,8 @@ public class UploadRequestBody extends RequestBody {
 }
 ```
 
-##### 拦截器的配置就如同下载的一样
+##### OkHttpClient监听
+拦截器的配置就如同下载的一样
 
 ```java
 OkHttpClient okHttpClient = new OkHttpClient()
