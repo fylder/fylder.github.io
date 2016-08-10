@@ -170,7 +170,8 @@ public class DownloadInterceptor implements Interceptor {
 }
 ```
 
-##### 在获取一个Retrofit时在OkHttpClient加入拦截器就可以监听
+##### OkHttpClient监听
+在获取一个Retrofit时在OkHttpClient加入拦截器就可以监听
 
 ```java
 OkHttpClient okHttpClient = new OkHttpClient()
