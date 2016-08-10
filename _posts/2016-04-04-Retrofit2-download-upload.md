@@ -100,6 +100,7 @@ public interface DownloadListener {
     
 }
 ```
+
 ##### 下载拦截器
 
 ```java
@@ -168,6 +169,7 @@ public class DownloadInterceptor implements Interceptor {
     }
 }
 ```
+
 ##### 在获取一个Retrofit时在OkHttpClient加入拦截器就可以监听
 
 ```java
@@ -224,6 +226,7 @@ public interface UploadListener {
 
 }
 ```
+
 ##### 上传拦截器
 
 ```java
@@ -251,6 +254,7 @@ public class UploadInterceptor implements Interceptor {
     }
 }
 ```
+
 ##### 继承RequestBody
 文件上传过程的进度中就从RequestBody获取
 
@@ -306,6 +310,7 @@ public class UploadRequestBody extends RequestBody {
     }
 }
 ```
+
 ##### 拦截器的配置就如同下载的一样
 
 ```java
