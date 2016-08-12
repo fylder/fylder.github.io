@@ -12,5 +12,6 @@ article .article-content img.emoji {
     margin: 0em 0.2em 0.25em 0.2em;
 }
 .posts-expand h2{
+    font-size: 180% !important;
     font-weight: 500 !important;
 }
