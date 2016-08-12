@@ -81,15 +81,15 @@ mathjax: false      #enable mathjax if true
 
 #### Author information
 author:
-  name: fylder      ## e.g. wuchong Author name
+  name: fylder      ## e.g. fylder Author name
   intro_line1:  "Hei, I'm fylder in 十万大山."    ## your introduction on the bottom of the page
   intro_line2:  "This is my blog, believe it or not. Too simple, too Smile."  ## the 2nd line
-  weibo: 2539792702     ## e.g. wuchong1014 or 2176287895 for http://weibo.com/2176287895
+  weibo: 2539792702     ## e.g. fylder or 2176287895 for http://weibo.com/2176287895
   weibo_verifier: 0e41f547 ## e.g. b3593ceb Your weibo-show widget verifier ,if you use weibo-show it is needed.
   tsina: 2539792702     ## e.g. 2176287895  Your weibo ID,It will be used in share button.
   email: fylder@163.com     ## e.g. imjark@gmail.com
   #twitter:    ## e.g. jarkwu for https://twitter.com/jarkwu
-  github: fylder    ## e.g. wuchong for https://github.com/wuchong
+  github: fylder    ## e.g. fylder for https://github.com/fylder
   #facebook: xiaobiu.sun  ## e.g. imjark for https://facebook.com/imjark
   #linkedin:   ## e.g. wuchong1014 for https://www.linkedin.com/in/wuchong1014
   google_plus:    ## e.g. "111190881341800841449" for https://plus.google.com/u/0/111190881341800841449, the "" is needed!
@@ -110,8 +110,9 @@ links:
 excerpt_separator: <!--more-->
 
 #### Comment
-duoshuo_shortname:    ## e.g. wuchong   your duoshuo short name.
-disqus_shortname: fylder    ## e.g. wuchong   your disqus short name.
+duoshuo_shortname:    ## e.g. fylder   your duoshuo short name.
+disqus_shortname: #fylder    ## e.g. fylder   your disqus short name.
+changyan_shortname: cysxDOQ0X  ## e.g. fylder   your changyan short name.
 
 #### Share button
 jiathis:
@@ -123,7 +124,7 @@ jiathis:
 google_analytics:
   enable: false
   id:        ## e.g. UA-46321946-2 your google analytics ID.
-  site:      ## e.g. wuchong.me your google analytics site or set the value as auto.
+  site:      ## e.g. fylder.me your google analytics site or set the value as auto.
 ## You MUST upgrade to Universal Analytics first!
 ## https://developers.google.com/analytics/devguides/collection/upgrade/?hl=zh_CN
 baidu_tongji:
