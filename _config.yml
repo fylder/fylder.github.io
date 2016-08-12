@@ -3,7 +3,7 @@ title: 剑指锁妖塔
 email: fylder@163.com
 description: Source of me.
 localurl: "" # the subpath of your site, e.g. /blog/
-url: http://fylder.github.io # the base hostname & protocol for your site
+url: http://fylder.me # the base hostname & protocol for your site
 #url:
 me-img: "/img/icon_head.png"
 
@@ -17,9 +17,9 @@ permalink: /:categories/:year/:month/:day/:title
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 #highlighter: pygments
 
-assets: https://fylder.github.io/assets
+assets: http://fylder.me/assets
 #assets: http://127.0.0.1:4000/assets
-baseurl: https://fylder.github.io
+baseurl: http://fylder.me
 #baseurl:
 
 
