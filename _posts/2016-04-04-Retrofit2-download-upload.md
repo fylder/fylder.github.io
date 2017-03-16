@@ -200,7 +200,7 @@ Observable<String> upload(@PartMap Map<String, RequestBody> params);
 > 使用 PartMap
 
 ```java
-partMap.put("参数名\"; filename=\"文件名\"", file);
+partMap.put("参数名\"; filename=\"文件名\", file);
 // or 自定义文件名
 partMap.put("参数名\"; filename=\"" + filename + "\"", file);
 ```
@@ -212,7 +212,7 @@ partMap.put("参数名\"; filename=\"" + filename + "\"", file);
 ```java
 RequestBody body = RequestBody.create(MediaType.parse("image/*"), file);
 Map<String, RequestBody> partMap = new HashMap<>();
-partMap.put("thumb\"; filename=\"img.jpg\"", body);
+partMap.put("thumb\"; filename=\"img.jpg\", body);
 ```
 
 ##### 上传监听接口
